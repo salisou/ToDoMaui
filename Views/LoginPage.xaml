@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoMaui.Views.LoginPage"
+             xmlns:vm="clr-namespace:ToDoMaui.ViewsModes"
+             x:DataType="vm:LoginPageVM"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Tertiary}"
+             Title="LoginPage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+            <Image Source="todologo.svg" Margin="0,0,0,15"/>
+
+            <Frame Padding="12,5">
+                <Entry Placeholder="Email" Text="{Binding EmailText}" TextColor="#333"/>
+            </Frame>
+
+
+            <Frame Padding="12,5">
+                <Entry Placeholder="Password" Text="{Binding PasswordText}" IsPassword="True"  TextColor="#333"/>
+            </Frame>
+
+            <Button Text="Login" Command="{Binding LoginCommand}"/>
+            <Button Text="Refistrazione Utente" BackgroundColor="Transparent" TextColor="#EEE" Command="{Binding CreateAccounCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
